@@ -1,5 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap');
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+  }
 
+  .modal-content {
+    background-color: var(--bg-color-1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .modal-content input[type="text"],
+  .modal-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .modal-content button:hover {
+    background-color: var(--orange);
+  }
+
+  .modal-content .error {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+  }
+
+  .modal-content p {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .modal-content a {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .modal-content a:hover {
+    text-decoration: underline;
+  }
+
+  /* Icon container */
+  .icon-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .icon-container i {
+    font-size: 50px;
+    color: #007bff;
+    cursor: pointer;
+  }
+
+  .close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+  }
 :root{
     --orange:#e16200;
     --text-color-1:#444;
@@ -685,4 +771,54 @@ section{
         width: 100%;
     }
 
+}
+/* Initial extra content styling */
+.extra-content {
+    display: block;
+    max-height: 100px; /* Adjust height for collapsed content */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.content{
+    color: var(--orange);
+}
+.more-text {
+    display: none; /* Hidden content initially */
+}
+
+/* Expanded box style */
+.box.expanded .extra-content {
+    max-height: none; /* Allow full height for expanded content */
+}
+
+.box.expanded .more-text {
+    display: inline; /* Reveal hidden content */
+}
+
+/* Button style with toggle icons */
+.btn i {
+    margin-left: 5px;
+}
+
+.box.expanded .btn i {
+    content: "-";
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box {
+    flex-basis: 30%; /* Adjusts boxes to fit the container */
+    margin-bottom: 20px;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
