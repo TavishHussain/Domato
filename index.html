@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <!-- font awesome cdn link  -->
-    <!-- custom css file cdn link  -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     
@@ -30,8 +29,8 @@
 
     <div class="icons">
         <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-share" id="theme-btn"></div>
-        <div class="fas fa-user" id="login-btn"></div>
+        <div class="fa-solid fa-cart-shopping" id="theme-btn"></div>
+        <div class="fas fa-user"  onclick="openModal('login')"></div>
         <div class="fas fa-bars" id="menu-btn"></div>
     </div>
 
@@ -48,6 +47,30 @@
 </header>
 
 <!-- header section ends -->
+ <!-- Signup and Login Popup -->
+ <div id="modal" class="modal-overlay">
+    <div class="modal-content" id="login-form">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Log In</h2>
+      <input type="text" id="login-username" placeholder="Enter Username" required>
+      <div class="error" id="login-username-error"></div>
+      <input type="password" id="login-password" placeholder="Enter Password" required>
+      <div class="error" id="login-password-error"></div>
+      <button onclick="login()">Log In</button>
+      <p>New user? <a onclick="openModal('signup')">Sign up</a></p>
+    </div>
+
+    <div class="modal-content" id="signup-form" style="display:none;">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-username" placeholder="Enter Username" required>
+      <div class="error" id="signup-username-error"></div>
+      <input type="password" id="signup-password" placeholder="Enter Password" required>
+      <div class="error" id="signup-password-error"></div>
+      <button onclick="signup()">Sign Up</button>
+      <p>Already have an account? <a onclick="openModal('login')">Log In</a></p>
+    </div>
+  </div>
 
 <!-- home section starts  -->
 
@@ -106,7 +129,7 @@
 
         <div class="box" data-aos="fade-up">
             <div class="image">
-                <img src="blog-1.jpg" alt="">
+                <img src="images/blog-1.jpg" alt="">
                 <h3> <i class="fas fa-utensils"></i> Cheese Burger </h3>
             </div>
             <div class="content">
@@ -118,7 +141,7 @@
 
         <div class="box" data-aos="fade-up">
             <div class="image">
-                <img src="blog-2.jpg" alt="">
+                <img src="images/blog-2.jpg" alt="">
                 <h3> <i class="fas fa-utensils"></i> Chicken Burger </h3>
             </div>
             <div class="content">
@@ -130,7 +153,7 @@
 
         <div class="box" data-aos="fade-up">
             <div class="image">
-                <img src="blog-3.jpg" alt="">
+                <img src="images/blog-3.jpg" alt="">
                 <h3> <i class="fas fa-utensils"></i> Chicken Biryani </h3>
             </div>
             <div class="content">
@@ -142,7 +165,7 @@
 
         <div class="box" data-aos="fade-up">
             <div class="image">
-                <img src="blog-4.jpg" alt="">
+                <img src="images/blog-4.jpg" alt="">
                 <h3> <i class="fas fa-utensils"></i> Egg Biryani </h3>
             </div>
             <div class="content">
@@ -154,7 +177,7 @@
 
         <div class="box" data-aos="fade-up">
             <div class="image">
-                <img src="blog-5.jpg" alt="">
+                <img src="images/blog-5.jpg" alt="">
                 <h3> <i class="fas fa-utensils"></i> Roasted Chicken </h3>
             </div>
             <div class="content">
@@ -166,7 +189,7 @@
 
         <div class="box" data-aos="fade-up">
             <div class="image">
-                <img src="blog-6.jpg" alt="">
+                <img src="images/blog-6.jpg" alt="">
                 <h3> <i class="fas fa-utensils"></i> Tandoori Chicken </h3>
             </div>
             <div class="content">
@@ -257,7 +280,7 @@
 
 <!-- review section starts  -->
 
-<section class="review" id="review">
+<!-- <section class="review" id="review">
 
     <h1 class="heading"> client's <span>review</span> </h1>
 
@@ -266,7 +289,7 @@
         <div class="swiper-wrapper">
 
             <div class="swiper-slide slide">
-                <img src="pic-1.png" alt="">
+                <img src="images/pic-1.png" alt="">
                 <h3>Sarita Ma'am</h3>
                 <p>"Seamless Experience! 🍕" I've been using Domato for a few weeks now, and I love how easy it is to navigate. The app is super user-friendly, and ordering my favorite food has never been this quick. Definitely a time-saver for my busy days!</p>
                 <div class="stars">
@@ -279,7 +302,7 @@
             </div>
 
             <div class="swiper-slide slide">
-                <img src="pic-2.png" alt="">
+                <img src="images/pic-2.png" alt="">
                 <h3>Jai Sir</h3>
                 <p>"Great Discounts and Fast Delivery!"
                     I was pleasantly surprised by the discounts offered on the app. The variety of restaurants and quick delivery make  Domato my go-to app for ordering food. Never had any delays, and the service is spot on!</p>
@@ -293,7 +316,7 @@
             </div>
 
             <div class="swiper-slide slide">
-                <img src="pic-3.png" alt="">
+                <img src="images/pic-3.png" alt="">
                 <h3>Laxita Ma'am</h3>
                 <p>"Wide Range of Cuisines 🍔🍣"
                     Domato offers so many options, from burgers to sushi. I love trying different cuisines, and this app makes it easy to explore. The real-time tracking feature is also very convenient. Highly recommend!</p>
@@ -307,7 +330,7 @@
             </div>
 
             <div class="swiper-slide slide">
-                <img src="pic-4.png" alt="">
+                <img src="images/pic-4.png" alt="">
                 <h3>Diwakar Sir </h3>
                 <p>"Super Reliable and Convenient"
 I’ve ordered multiple times, and each time the experience has been flawless. The app is smooth, and customer service is very responsive. I also appreciate the customization options for dishes!</p>
@@ -320,7 +343,7 @@ I’ve ordered multiple times, and each time the experience has been flawless. T
                 </div>
             </div>
             <div class="swiper-slide slide">
-                <img src="pic-5.png" alt="">
+                <img src="images/pic-5.png" alt="">
                 <h3>Deepa Ma'am </h3>
                 <p>"Affordable and Easy to Use"<br/>
                      Domato has some of the best deals in town. I’m a student on a budget, and the combo offers have saved me so much. Plus, the interface is simple and hassle-free. Ordering food has never been this easy!</p>
@@ -333,7 +356,7 @@ I’ve ordered multiple times, and each time the experience has been flawless. T
                 </div>
             </div>
             <div class="swiper-slide slide">
-                <img src="pic-6.png" alt="">
+                <img src="images/pic-6.png" alt="">
                 <h3>Dipti Ma'am</h3>
                 <p>"Fresh and Delicious Every Time!"
                     What I love most about Domato is the quality of the food. Whether I'm ordering from a well-known chain or a local restaurant, the meals always arrive hot and fresh. The app makes it easy to reorder my favorites too. Definitely a must-have for food lovers!</p>
@@ -352,7 +375,7 @@ I’ve ordered multiple times, and each time the experience has been flawless. T
 
     </div>
 
-</section>
+</section> -->
 
 <!-- review section ends -->
 
@@ -387,20 +410,21 @@ I’ve ordered multiple times, and each time the experience has been flawless. T
 <!-- blog section starts  -->
 
 <section class="blogs" id="blogs">
-
     <h1 class="heading"> our <span>blogs</span> </h1>
-
     <div class="box-container">
-
         <div class="box" data-aos="fade-up">
             <div class="image">
-                <img src="img1.jpg" alt="">
+                <img src="images/img1.jpg" alt="">
             </div>
             <div class="content">
                 <h3>What is bombay and hyderabadi biryani?</h3>
-                <a href="#" class="btn">read more</a>
+                <p class="extra-content">
+                    Bombay biryani has a slightly tangy flavor, while Hyderabadi 
+                    <span class="more-text"> biryani is spicier with a distinct aroma. Bombay biryani has a mix of spicy and sweet flavors. It is often prepared with potatoes and is much milder compared to Hyderabadi biryani. Hyderabadi biryani is famous for its use of saffron and intense spices that give it a rich, flavorful taste.  The preparation styles of the two vary as well: Bombay biryani often includes tomatoes and yogurt, while Hyderabadi biryani can be either kachhi or pakki. The cooking method of Hyderabadi biryani involves slow cooking the rice and marinated meat together, resulting in layers of flavor. Bombay biryani usually cooks the meat and rice separately.</span>
+                </p>
+                <a href="#" class="btn toggle-content">read more <i class="fas fa-plus"></i></a>
                 <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 1st jan, 2021 </a>
+                    <a href="#"> <i class="fas fa-calendar"></i> 1st jan, 2025 </a>
                     <a href="#"> <i class="fas fa-user"></i> by admin </a>
                 </div>
             </div>
@@ -408,13 +432,17 @@ I’ve ordered multiple times, and each time the experience has been flawless. T
 
         <div class="box" data-aos="fade-up">
             <div class="image">
-                <img src="img2.jpg" alt="">
+                <img src="images/img2.jpg" alt="">
             </div>
             <div class="content">
                 <h3>How many types of burger are there?</h3>
-                <a href="#" class="btn">read more</a>
+                <p class="extra-content">
+                    There are numerous types of burgers, 
+                    <span class="more-text">including cheeseburgers, veggie burgers, chicken burgers, and more. Cheeseburgers are the most popular, with melted cheese adding flavor and richness to the patty. Veggie burgers, often made with ingredients like beans, lentils, or tofu, are a popular option for those looking for a meatless alternative. Chicken burgers, on the other hand, provide a lighter option compared to beef. Other types of burgers include fish burgers, which are made with fish patties, and gourmet burgers, which are created with high-end ingredients like truffle, wagyu beef, or premium cheeses. Each type offers a unique flavor experience.</span>
+                </p>
+                <a href="#" class="btn toggle-content">read more <i class="fas fa-plus"></i></a>
                 <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 1st jan, 2021 </a>
+                    <a href="#"> <i class="fas fa-calendar"></i> 1st jan, 2025 </a>
                     <a href="#"> <i class="fas fa-user"></i> by admin </a>
                 </div>
             </div>
@@ -422,22 +450,23 @@ I’ve ordered multiple times, and each time the experience has been flawless. T
 
         <div class="box" data-aos="fade-up">
             <div class="image">
-                <img src="img3.jpg" alt="">
+                <img src="images/img3.jpg" alt="">
             </div>
             <div class="content">
                 <h3>Did you know some facts about pizza?</h3>
-                <a href="#" class="btn">read more</a>
+                <p class="extra-content">
+                    Pizza originated in Italy, 
+                    <span class="more-text"> but over time, it has spread worldwide, becoming one of the most beloved fast foods. The classic Neapolitan pizza has a thin crust, topped with fresh tomatoes, mozzarella cheese, and basil. Chicago-style pizza, on the other hand, is famous for its thick, deep-dish crust that’s more like a pie than the traditional pizza. Modern pizza has seen the rise of creative variations, with toppings that range from pineapple and ham (Hawaiian pizza) to gourmet ingredients like arugula, prosciutto, and balsamic glaze. Pizza is incredibly versatile and can be tailored to suit almost any taste preference.</span>
+                </p>
+                <a href="#" class="btn toggle-content">read more <i class="fas fa-plus"></i></a>
                 <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> 1st jan, 2021 </a>
+                    <a href="#"> <i class="fas fa-calendar"></i> 1st jan, 2025 </a>
                     <a href="#"> <i class="fas fa-user"></i> by admin </a>
                 </div>
             </div>
         </div>
-
     </div>
-
 </section>
-
 <!-- blog section ends -->
 
 <!-- footer section starts  -->
@@ -492,7 +521,8 @@ I’ve ordered multiple times, and each time the experience has been flawless. T
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <!-- custom js file link  -->
-<script src="script.js"></script>
+<script src="js/script.js"></script>
+<script src="signin.js"></script>
 <script>
 AOS.init({
     duration:800,
